@@ -1,7 +1,7 @@
 <?php
 $errors = [];
 
-//TODO 3 - Get the data form the form and check for errors
+// TODO 3 - Get the data from the form and check for errors
 
 
 if (!empty($errors)) {
@@ -30,21 +30,23 @@ if (!empty($errors)) {
 
     <main>
         <div class="summary">
-
+            <!-- BONUS -->
             <p>
                 <img src="images/placeholder.png" alt="">
                 <span>Votre vendeur</span>
             </p>
-            <!--TODO 2 - Replace those placeholders by the values sent from the form -->
+            
+
+            <!-- TODO 2 - Replace those placeholders by the values sent from the form -->
             <ul>
                 <li>Votre entreprise : <span>Dunder Mifflin</span></li>
                 <li>Votre nom : <span>Mickael Scott</span></li>
                 <li>Votre email : <span>mickael.scott@dundermifflin.com</span></li>
                 <li>Votre message :
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Provident facere, tempora possimus aspernatur excepturi 
-                        incidunt dolores illo dicta similique harum mollitia enim 
-                        voluptates delectus? Repellendus inventore molestiae a 
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Provident facere, tempora possimus aspernatur excepturi
+                        incidunt dolores illo dicta similique harum mollitia enim
+                        voluptates delectus? Repellendus inventore molestiae a
                         accusamus deleniti?
                     </p>
                 </li>

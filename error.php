@@ -14,15 +14,13 @@
             <img src="images/false.gif" alt="False !">
             <p>Nous rencontrons les problèmes suivants pour traiter votre demande : </p>
             <ul>
-                <?php
-                    foreach($errors as $error) {
-                        echo '<li>';
-                        echo $error;
-                        echo '</li>' . PHP_EOL;
-                    }
-                ?>
+                <? foreach($errors as $error) : ?>
+                    <li><?= $error ?></li>
+                <? endforeach; ?>
             </ul>
-            <p><a href="form.html">Retour au formulaire</a></p>
+            <p>
+                <a href="form.html">Retour au formulaire</a>
+            </p>
         </div>
     </main>
     
