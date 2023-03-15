@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+font-family: theOffice;
+src: url("../fonts/american_typewritter_reg.ttf");
+}
+  
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: bisque;
+    border: 2vw solid burlywood;
+    border-radius: 3%;
+    font-family: theOffice;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 37pt;
+}
+
+header img {
+    width: 170px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+main p, main li {
+    font-size: large;
+    font-weight: bold;
+}
+
+main form, .summary, .errorPanel {
+    width: 60%;
+    background-color: burlywood;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    box-shadow: 5px 10px 10px rgb(69, 69, 69);
+}
+
+main form p {
+    display: flex;
+    justify-content: space-between;
+}
+
+main form input, 
+main form textarea {
+    padding: 4px;
+    width: 50%;
+    border-radius: 3px;
+}
+
+main form button {
+    font-size: large;
+    padding: 8px;
+}
+
+main form button img {
+    margin-bottom: -5px;
+    width: 20px;
+}
+
+.summary {
+    width: 75%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.summary p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary p img {
+    max-width: 200px;
+}
+
+.errorPanel {
+    border-color: rgb(163, 14, 44);
+    color: crimson;
+    text-align: center;
+}
+
+.errorPanel li {
+    text-align: start;
+}
+
+
+#buttonsLine {
+    justify-content: end;
+}
