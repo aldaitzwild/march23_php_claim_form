@@ -18,31 +18,22 @@
     <main>
         <p>Pour toute plainte concernant votre commande de papier, veuillez s'il vous plait remplir le formulaire suivant.</p>
 
-        <form action="result.php" method="post">
-            <p>
+        <form action="" method="post">
+            <div>
                 <label for="companyName">Nom de votre entreprise : </label>
                 <input type="text" id="companyName" name="companyName" required="true">
-            </p>
+            </div>
 
             <!--TODO 1 - Add the missing fields-->
-            <p>
-                <label for="contactName">Votre nom : </label>
-                <input type="text" id="contactName" name="contactName" required="true">
-            </p>
 
-            <p>
-                <label for="contactEmail">Votre email : </label>
-                <input type="email" id="contactEmail" name="contactEmail" required="true">
-            </p>
-
-            <p>
+            <div>
                 <label for="contactMessage">Votre message : </label>
                 <textarea name="contactMessage" id="contactMessage" rows="10"></textarea>
-            </p>
+            </div>
 
-            <p id="buttonsLine">
+            <div class="buttonsLine">
                 <button type="submit">Envoyer <img src="images/mail.png"></button>
-            </p>
+            </div>
         </form>
     </main>
     
