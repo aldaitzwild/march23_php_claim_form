@@ -14,9 +14,9 @@
             <img src="images/false.gif" alt="False !">
             <p>Nous rencontrons les problèmes suivants pour traiter votre demande : </p>
             <ul>
-                <? foreach($errors as $error) : ?>
+                <?php foreach($errors as $error) : ?>
                     <li><?= $error ?></li>
-                <? endforeach; ?>
+                <?php endforeach; ?>
             </ul>
             <p>
                 <a href="form.html">Retour au formulaire</a>
