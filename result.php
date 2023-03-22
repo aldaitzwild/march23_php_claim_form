@@ -1,8 +1,36 @@
 <?php
 $errors = [];
 
-// TODO 3 - Get the data from the form and check for errors
+$sellers = [
+    'Andy Bernard' => 'andy.webp',
+    'Dwight Schrute' => 'dwight.webp',
+    'Jim Halpert' => 'jim.webp',
+    'Phyllis Lapin-Vance' => 'phyllis.webp',
+    'Stanley Hudson' => 'stanley.webp',
+];
 
+$data = array_map('trim', $_POST);
+
+if(!isset($data['companyName']) || empty($data['companyName']))
+    $errors[] = "Le nom de la compagnie est obligatoire";
+
+if(!isset($data['contactName']) || empty($data['contactName']))
+    $errors[] = "Le nom du contact est obligatoire";
+
+if(!isset($data['contactEmail']) || empty($data['contactEmail']))
+    $errors[] = "L'email du contact est obligatoire";
+
+if(!isset($data['contactMessage']) || empty($data['contactMessage']))
+    $errors[] = "Le message de réclamation est obligatoire";
+
+if(filter_var($data['contactEmail'], FILTER_VALIDATE_EMAIL) === false)
+    $errors[] = "L'email saisie est mal formaté";
+
+if(strlen($data['contactMessage']) <= 30)
+    $errors[] = "Le message doit faire plus que 30 caractères.";
+
+if(!isset($sellers[$data['sellerName']]))
+    $errors[] = "Vous n'avez pas sélectionné un vendeur de la liste.";
 
 if (!empty($errors)) {
     require 'error.php';
@@ -32,22 +60,17 @@ if (!empty($errors)) {
         <div class="summary">
             <!-- BONUS -->
             <p>
-                <img src="images/placeholder.png" alt="">
+                <img src="images/<?php echo $sellers[$data['sellerName']] ?>" alt="">
                 <span>Votre vendeur</span>
             </p>
             
 
-            <!-- TODO 2 - Replace those placeholders by the values sent from the form -->
             <ul>
-                <li>Votre entreprise : <span>Dunder Mifflin</span></li>
-                <li>Votre nom : <span>Mickael Scott</span></li>
-                <li>Votre email : <span>mickael.scott@dundermifflin.com</span></li>
+                <li>Votre entreprise : <span><?php echo $data['companyName']; ?></span></li>
+                <li>Votre nom : <span><?php echo $data['contactName']; ?></span></li>
+                <li>Votre email : <span><?php echo $data['contactEmail']; ?></span></li>
                 <li>Votre message :
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Provident facere, tempora possimus aspernatur excepturi
-                        incidunt dolores illo dicta similique harum mollitia enim
-                        voluptates delectus? Repellendus inventore molestiae a
-                        accusamus deleniti?
+                    <p><?php echo $data['contactMessage']; ?>
                     </p>
                 </li>
             </ul>
